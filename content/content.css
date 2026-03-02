@@ -1,0 +1,124 @@
+/* 英语学习助手 - 内容脚本样式 */
+
+/* 翻译标记样式 */
+.ela-translated {
+  transition: background-color 0.2s ease;
+}
+
+.ela-word:hover {
+  background-color: #e0e7ff;
+}
+
+.ela-word {
+  cursor: help;
+  padding: 0 1px;
+  border-bottom: 1px dotted rgba(79, 70, 229, 0.6);
+}
+
+.ela-word--common {
+  border-bottom-color: #10b981;
+}
+
+.ela-word--cet6 {
+  color: #ef4444;
+  border-bottom-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.08);
+  border-radius: 2px;
+}
+
+/* 释义tooltip样式 */
+.ela-tooltip {
+  position: absolute;
+  z-index: 999999;
+  width: 220px;
+  max-width: 280px;
+  padding: 14px 16px;
+  background: #1f2937;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  pointer-events: none;
+  animation: ela-fadeIn 0.2s ease;
+}
+
+@keyframes ela-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ela-tooltip-word {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a5b4fc;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.ela-tooltip-phonetic {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.ela-tooltip-pos {
+  font-size: 12px;
+  color: #c7d2fe;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.ela-tooltip-meaning {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #f3f4f6;
+}
+
+.ela-tooltip-example {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+  line-height: 1.4;
+  padding-top: 8px;
+  border-top: 1px solid #374151;
+}
+
+.ela-float-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 120px;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+  cursor: pointer;
+  z-index: 1000000;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+.ela-float-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.4);
+}
+
+.ela-float-toggle--original {
+  background: #ef4444;
+}

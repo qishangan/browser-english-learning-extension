@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英语学习助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>英语学习助手</h1>
+    </header>
+
+    <main class="main">
+      <div class="function-item">
+        <div class="function-info">
+          <span class="function-name">中文翻译</span>
+          <span class="function-desc">自动将页面中文翻译成英文</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="translateToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="function-item column">
+        <div class="function-info">
+          <span class="function-name">英语化比例</span>
+          <span class="function-desc">控制页面转成英文的比例</span>
+        </div>
+        <div class="range-row">
+          <input type="range" id="englishRate" min="0" max="100" step="5">
+          <span id="englishRateValue">60%</span>
+        </div>
+      </div>
+
+      <div class="function-item">
+        <div class="function-info">
+          <span class="function-name">自动调节</span>
+          <span class="function-desc">每次翻译后自动提升比例</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="autoAdjustToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="function-item">
+        <div class="function-info">
+          <span class="function-name">自动调节档位</span>
+          <span class="function-desc">每次提升比例</span>
+        </div>
+        <select id="autoAdjustStep" class="select">
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="20">20%</option>
+        </select>
+      </div>
+
+      <div class="function-item">
+        <div class="function-info">
+          <span class="function-name">单词释义</span>
+          <span class="function-desc">鼠标悬停显示英文单词释义</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="definitionToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="status-bar">
+        <span id="statusText">等待操作...</span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <button id="translateBtn" class="action-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 8L10 13M4 14L10 8L15 11M19 8L14 3M19 12L14 17M19 17L17 19M14 5L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        立即翻译
+      </button>
+      <button id="refreshBtn" class="action-btn secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23 4V10H17M1 20V14H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.51 9.00001C4.01717 7.56679 4.87913 6.28543 6.01547 5.27543C7.1518 4.26543 8.52547 3.55978 10.0083 3.22433C11.4911 2.88888 13.0348 2.93436 14.4952 3.35679C15.9556 3.77922 17.2853 4.56473 18.36 5.64001L23 10M1 14L5.64 18.36C6.71475 19.4353 8.04437 20.2208 9.50481 20.6432C10.9652 21.0657 12.5089 21.1111 13.9917 20.7757C15.4745 20.4402 16.8482 19.7346 17.9845 18.7246C19.1209 17.7146 19.9828 16.4332 20.49 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        刷新页面
+      </button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
