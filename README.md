@@ -1,11 +1,65 @@
-﻿# English Learning Assistant
+﻿# 英语学习助手
 
 <p>
-  <a href="./README.en.md"><img alt="English" src="https://img.shields.io/badge/English-README-0A66C2?style=for-the-badge"></a>
-  <a href="./README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/简体中文-说明文档-EA4335?style=for-the-badge"></a>
+  <a href="./README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/简体中文-当前-EA4335?style=for-the-badge"></a>
+  <a href="./README.en.md"><img alt="English" src="https://img.shields.io/badge/English-Switch-0A66C2?style=for-the-badge"></a>
 </p>
 
-Choose your language:
+English version: [README.en.md](./README.en.md)
 
-- English: [README.en.md](./README.en.md)
-- 简体中文: [README.zh-CN.md](./README.zh-CN.md)
+一个用于浏览中文网页时进行沉浸式英语学习的浏览器插件。
+
+## 项目简介
+
+该插件会把页面中的中文内容按比例替换为英文，并在阅读场景中帮助用户学习单词。
+
+## 核心功能
+
+- 中文页面英文化，支持 `English Rate`（0-100%）比例控制。
+- 支持每轮翻译后自动提升英文化比例（自动调节）。
+- Popup 面板支持一键“立即翻译”当前页面。
+- 鼠标悬停英文词可显示词义 tooltip。
+- 页面内悬浮按钮可在“译文/原文”视图间切换。
+- 词典查询优先本地词典，必要时回退到在线词典。
+
+## 技术实现
+
+- 基于 Manifest V3 架构
+- `popup/`：控制面板与设置 UI
+- `content/`：页面文本处理与悬停交互
+- `background/`：翻译和词典查询后台服务
+- 本地词典数据来源：`ecdict-stardict-28`
+- 翻译接口：百度翻译 API
+- 在线词典兜底：Free Dictionary API
+
+## 安装方式
+
+1. 克隆本仓库。
+2. 安装 Git LFS（词典大文件必需）。
+3. 执行 `git lfs pull` 拉取 `.dict`、`.idx` 文件。
+4. 打开 Edge/Chrome 扩展管理页：
+   - Edge: `edge://extensions`
+   - Chrome: `chrome://extensions`
+5. 打开“开发者模式”。
+6. 点击“加载已解压的扩展程序”，选择本项目目录。
+
+## 使用说明
+
+1. 点击插件图标打开 popup。
+2. 开启翻译并设置英文化比例。
+3. 可选开启自动调节，并设置档位（`5%/10%/20%`）。
+4. 点击“立即翻译”处理当前页面。
+5. 鼠标悬停英文词查看释义。
+6. 使用页面悬浮按钮在译文/原文间切换。
+
+## 权限与隐私
+
+- 权限：`activeTab`、`storage`、`scripting`，以及 `<all_urls>` 页面访问。
+- 翻译和在线兜底词典查询会将文本/单词发送到外部 API。
+- 本地词典查询在本机完成。
+
+## 仓库说明
+
+- 仓库中的大词典文件由 Git LFS 管理。
+- 插件入口文件：`manifest.json`。
+- 当前版本：`1.0.0`。
